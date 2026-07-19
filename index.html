@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nancy Sinclair. Web designer, AI enthusiast, perpetual work-in-progress.">
+  <title>Nancy Sinclair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231B9E8B' d='M50 10 L61 39 L91 39 L68 56 L79 85 L50 68 L21 85 L32 56 L9 39 L39 39 Z'/%3E%3C/svg%3E">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F5F3ED;
+      color: #2C2C2C;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    /* Header / Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 243, 237, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(27, 158, 139, 0.08);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1B9E8B;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    
+    nav a {
+      font-size: 13px;
+      color: #6B6B6B;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover {
+      color: #1B9E8B;
+    }
+    
+    nav a + a {
+      margin-left: 2rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    section:nth-child(odd) {
+      background: #F5F3ED;
+    }
+    
+    section:nth-child(even) {
+      background: #FFFFFF;
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 6rem 2rem;
+      text-align: left;
+    }
+    
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 700;
+      color: #1B9E8B;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+    
+    .hero .tagline {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 500;
+      color: #6B6B6B;
+      margin-bottom: 2rem;
+      letter-spacing: -0.5px;
+      max-width: 600px;
+    }
+    
+    .hero .intro {
+      font-size: 16px;
+      color: #2C2C2C;
+      max-width: 650px;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    /* Section headers */
+    h2 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      color: #1B9E8B;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+    
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2C2C2C;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      letter-spacing: -0.3px;
+    }
+    
+    h3:first-child {
+      margin-top: 0;
+    }
+    
+    /* Body text */
+    p {
+      font-size: 16px;
+      color: #2C2C2C;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+    
+    p strong {
+      font-weight: 600;
+      color: #1B9E8B;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      color: #6B6B6B;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+    
+    /* Highlights / callouts */
+    .callout {
+      background: rgba(27, 158, 139, 0.05);
+      border-left: 4px solid #1B9E8B;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #2C2C2C;
+      max-width: 700px;
+    }
+    
+    .callout em {
+      color: #1B9E8B;
+      font-style: italic;
+      font-weight: 500;
+    }
+    
+    /* Contact */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #1B9E8B;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 1rem;
+    }
+    
+    .contact-link:hover {
+      background: #158076;
+      transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background: #2C2C2C;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 2rem;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    
+    footer a {
+      color: #A8D8E8;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(168, 216, 232, 0.3);
+    }
+    
+    footer a:hover {
+      border-bottom-color: #A8D8E8;
+    }
+    
+    /* Utility */
+    .divider {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    
+    .star-divider {
+      width: 40px;
+      height: 40px;
+      opacity: 0.2;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav a + a {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+      
+      section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .hero {
+        padding: 4rem 1.5rem;
+      }
+      
+      h2 {
+        font-size: 32px;
+      }
+      
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="logo">Nancy Sinclair</a>
+      <div>
+        <a href="#this-afternoon">Philosophy</a>
+        <a href="#thirty-years">Story</a>
+        <a href="#whats-next">Now</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Nancy Sinclair</h1>
+    <p class="tagline">Web designer. AI enthusiast. Perpetual work-in-progress.</p>
+    <p class="intro">For thirty years, I've been following the next interesting problem. Not a career ladder. Not a five-year plan. Just: what's worth doing today? It turns out that's a perfectly reasonable way to build a life.</p>
+  </section>
+
+  <!-- This Afternoon -->
+  <section id="this-afternoon">
+    <h2>What am I doing this afternoon?</h2>
+    <p>A few years ago, I was in therapy spiraling about the existential terror of "What will I be doing when I'm 60?" My therapist reframed it: <strong>"What are you doing this afternoon?"</strong></p>
+    <p>That stopped the spiral. This afternoon, I'm working on something interesting. And the afternoon after that. And the one after that. Eventually, something I do some afternoon will lead me to the thing I'll be doing when I'm 60.</p>
+    <div class="callout">
+      <em>Stop catastrophizing about the destination.</em> Build momentum one afternoon at a time. Forward motion without anxiety is its own kind of freedom.
+    </div>
+    <p>This philosophy shaped how I move through the world—especially after I spent 25 years in corporate consulting doing exactly this. Contract to contract. Problem to problem. Never staying still long enough to get stuck, but staying engaged enough to master each thing before moving on.</p>
+  </section>
+
+  <!-- 30 Years in Motion -->
+  <section id="thirty-years">
+    <h2>Thirty years in motion</h2>
+    
+    <h3>1997</h3>
+    <p>Perl CGI came out. My manager told me to figure it out. I built an intranet site for mutual fund analysis. It worked. I liked this more than programming.</p>
+    
+    <h3>25+ years consulting</h3>
+    <p>Contract work. Finance, healthcare, government. No gaps between gigs. At 50, I decided <strong>freedom and variety beat stability.</strong> Not a ladder person.</p>
+    
+    <h3>Now</h3>
+    <p>Websites weren't the future anymore. AI is. So I'm pivoting. I freelance, annotate data, teach people Canva and AI. But freelancing is <strong>"being home with my sad and lonely self"</strong>—so I also work the front desk at an acupuncture clinic. Connection. Service. That's the point now.</p>
+    <p>In corporate, I wanted money and prestige. Boston Harbor. Luxury condo. Now I'm on Cape Cod and my purpose is different: <strong>to be of service.</strong> The part-time work isn't a side thing. It's the work.</p>
+  </section>
+
+  <!-- What's Next -->
+  <section id="whats-next">
+    <h2>What's next?</h2>
+    <p>Honest answer: I have no idea. And I'm okay with that.</p>
+    <p>I don't need the next thing figured out. I don't have a five-year plan or a grand mission statement. I know the kind of work that interests me. I know my skills. I know I work best when I have freedom to move between things, and enough variety to stay engaged.</p>
+    <p>So I'm watching for the next afternoon's interesting problem. It could be web design. It could be AI. It could be something I haven't discovered yet. The point is: I'm paying attention. When the next thing shows up, I'll know.</p>
+    <div class="divider">
+      <svg class="star-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path fill="#1B9E8B" d="M50 10 L61 39 L91 39 L68 56 L79 85 L50 68 L21 85 L32 56 L9 39 L39 39 Z"/>
+      </svg>
+    </div>
+    <p>If you want to talk about web design, AI, technology, or just the philosophy of moving through the world without a master plan—<strong>let's talk.</strong></p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p>Email is the best way to reach me. Say hi.</p>
+    <a href="mailto:hello@nancysinclair.com" class="contact-link">hello@nancysinclair.com</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Nancy Sinclair</p>
+    <p><a href="mailto:hello@nancysinclair.com">hello@nancysinclair.com</a></p>
+    <p style="margin-top: 1rem; font-size: 12px; color: #AABBCC;">Built with intention. No tracking. No algorithms.</p>
+  </footer>
+
+</body>
+</html>
