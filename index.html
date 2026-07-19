@@ -6,7 +6,7 @@
   <meta name="description" content="Nancy Sinclair. Web designer, AI enthusiast, perpetual work-in-progress.">
   <title>Nancy Sinclair</title>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%237C5BA8' d='M50 10 L61 39 L91 39 L68 56 L79 85 L50 68 L21 85 L32 56 L9 39 L39 39 Z'/%3E%3C/svg%3E">
   
   <style>
     * {
@@ -233,6 +233,52 @@
       height: 40px;
       opacity: 0.2;
     }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 120px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #7C5BA8;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-date {
+      text-align: right;
+      font-weight: 600;
+      color: #7C5BA8;
+      font-size: 16px;
+    }
+
+    .timeline-content {
+      padding-left: 1rem;
+    }
+
+    .timeline-content p {
+      margin-bottom: 1rem;
+      font-size: 16px;
+      color: #1C2A3A;
+      line-height: 1.7;
+    }
+
+    .timeline-content p:last-child {
+      margin-bottom: 0;
+    }
     
     /* Responsive */
     @media (max-width: 600px) {
@@ -265,7 +311,7 @@
     }
   </style>
 </head>
- 
+
 <body>
   
   <!-- Header / Navigation -->
@@ -280,14 +326,14 @@
       </div>
     </nav>
   </header>
- 
+
   <!-- Hero Section -->
   <section class="hero">
     <h1>Nancy Sinclair</h1>
     <p class="tagline">Web designer. AI enthusiast. Perpetual work-in-progress.</p>
     <p class="intro">For thirty years, I've been following my North Star. Not a career ladder. Not a five-year plan. Just: what's worth doing today? It turns out that's a perfectly reasonable way to build a life.</p>
   </section>
- 
+
   <!-- This Afternoon -->
   <section id="this-afternoon">
     <h2>What am I doing this afternoon?</h2>
@@ -298,53 +344,87 @@
     </div>
     <p>This philosophy shaped how I move through the world—especially after I spent 25 years in corporate consulting doing exactly this. Contract to contract. Problem to problem. Never staying still long enough to get stuck, but staying engaged enough to master each thing before moving on.</p>
   </section>
- 
-  <!-- 30 Years in Motion -->
+
+  <!-- 40 Years in Motion -->
   <section id="thirty-years">
-    <h2>Thirty years in motion</h2>
+    <h2>Forty years in motion</h2>
     
-    <h3>1997</h3>
-    <p>Perl CGI came out. My manager told me to figure it out. I built an intranet site for mutual fund analysis. It worked. I liked this more than programming.</p>
-    
-    <h3>25+ years consulting</h3>
-    <p>Contract work. Finance, healthcare, government. No gaps between gigs. At 50, I decided <strong>freedom and variety beat stability.</strong> Not a ladder person.</p>
-    
-    <h3>Now</h3>
-    <p>Websites weren't the future anymore. AI is. So I'm pivoting. I freelance, annotate data, teach people Canva and AI. But freelancing is <strong>"being home with my sad and lonely self"</strong>—so I also work the front desk at an acupuncture clinic. Connection. Service. That's the point now.</p>
-    <p>In corporate, I wanted money and prestige. Boston Harbor. Luxury condo. Now I'm on Cape Cod and my purpose is different: <strong>to be of service.</strong> The part-time work isn't a side thing. It's the work.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">1986</div>
+        <div class="timeline-content">
+          <p>Stumbled into math and programming. No master plan. Just the next thing.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">1992</div>
+        <div class="timeline-content">
+          <p>Master's Degree in Applied Mathematics. (I'm super proud of that.) First job: startup as a client-server developer.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">1992–2018</div>
+        <div class="timeline-content">
+          <p>Corporate software. 26 years as an independent contractor. Finance, healthcare, government. No gaps between gigs. I moved constantly because I needed variety. Turns out that's very ADHD. Didn't know that yet.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2018</div>
+        <div class="timeline-content">
+          <p>I'm 50. I've spent half my life in corporate. I quit. No plan. Very impulsive. Also very ADHD (again, didn't know that yet).</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2020</div>
+        <div class="timeline-content">
+          <p>I'm 52. Pandemic. Diagnosis. ADHD. And suddenly everything—the job-hopping, the inability to fit into a traditional FTE, the need for variety, the hyperfocus on what interests me—suddenly it all made sense. I wasn't broken. My brain just works differently.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Now</div>
+        <div class="timeline-content">
+          <p>Freelancing. Part-time work with people. Multiple interests. Building a life that works *with* my brain instead of against it. Former corporate full-stack developer, current freelancer with too many ideas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(124, 91, 168, 0.1);">
+      <h3>Following the wave</h3>
+      <p>Perl/CGI to web development to AI. Different decade, same person: watching what's next and having the guts to learn it. I've ridden every wave because I got bored with the last thing and paid attention when the next shiny thing showed up. That's not scattered. That's staying alive.</p>
+    </div>
   </section>
- 
+
   <!-- What's Next -->
   <section id="whats-next">
     <h2>What's next?</h2>
     <p>Honest answer: I have no idea. And I'm okay with that.</p>
-    <p>I don't need the next thing figured out. I don't have a five-year plan or a grand mission statement. I know the kind of work that interests me. I know my skills. I know I work best when I have freedom to move between things, and enough variety to stay engaged.</p>
+    <p>I'm in my second Saturn Return (ends when I'm 60), which is supposedly a time of massive life upheaval. My therapist reframed my spiral about turning 60 as <strong>"What are you doing this afternoon?"</strong> and that stuck. So I'm watching for the next afternoon's interesting problem.</p>
+    <p>I don't need the next thing figured out. I don't have a five-year plan or a grand mission statement. But I do have a North Star: I'm here to be in service to others. I know the kind of work that interests me. I know my skills. I know I work best when I have freedom to move between things, and enough variety to stay engaged.</p>
     <p>So I'm watching for the next afternoon's interesting problem. It could be web design. It could be AI. It could be something I haven't discovered yet. The point is: I'm paying attention. When the next thing shows up, I'll know.</p>
     <div class="divider">
       <img src="logo.png" alt="divider" class="star-divider">
     </div>
     <p>If you want to talk about web design, AI, technology, or just the philosophy of moving through the world without a master plan—<strong>let's talk.</strong></p>
   </section>
- 
+
   <!-- Contact -->
   <section id="contact">
     <h2>Get in touch</h2>
     <p>Email is the best way to reach me. Say hi.</p>
-    <a href="mailto:hello@nancysinclair.com" class="contact-link">nancy@nancysinclair.com</a>
+    <a href="mailto:hello@nancysinclair.com" class="contact-link">hello@nancysinclair.com</a>
   </section>
- 
+
   <!-- Footer -->
   <footer>
     <p>Nancy Sinclair</p>
     <p><a href="mailto:hello@nancysinclair.com">hello@nancysinclair.com</a></p>
-    <p style="margin-top: 1rem; font-size: 12px; color: #AABBCC;">Claude Code created this website and it looked terrible so I rewrote it myself in notepad. Sometimes the more things change, the more they stay the same.</p>
+    <p style="margin-top: 1rem; font-size: 12px; color: #AABBCC;">Built with intention. No tracking. No algorithms.</p>
   </footer>
- 
+
 </body>
 </html>
-
-
-
-
-
-
